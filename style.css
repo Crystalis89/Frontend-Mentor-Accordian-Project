@@ -1,0 +1,174 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:root {
+
+    --Lightpink: hsl(275, 100%, 97%);
+    --White: hsl(0, 0%, 100%);
+    --Grayishpurple: hsl(292, 16%, 49%);
+    --Darkpurple: hsl(292, 42%, 14%);
+
+}
+
+@font-face {
+    font-family: worksans;
+    src: url(assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+* {
+    border-radius: 10px;
+}
+
+body {
+    font-family: worksans, sans-serif;
+    font-size: 16px;
+    background: url(assets/images/background-pattern-mobile.svg) no-repeat; 
+    background-color: var(--Lightpink);
+    background-size: contain;
+    height: 99vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    pointer-events: none;
+}
+
+button {
+    border: none;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: space-between;
+    font-weight: 700;
+    background-color: white;
+}
+
+.container{
+    background-color: var(--White);
+    margin: 39% auto auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: 2px 0px 10px 0px gray;
+}
+
+.container h1 {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 3rem;
+    margin-top: auto;
+}
+
+.accordian {
+    padding: 10px;
+}
+
+.accordian h2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordian p {
+    color: black;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+:hover, :focus {
+    color: #AD28EB;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+@media only screen and (min-width: 450px) {
+    body {
+        background: url(assets/images/background-pattern-desktop.svg) no-repeat; 
+        background-color: var(--Lightpink);
+        background-size: contain;
+    }
+
+    .container {
+        width: 45rem;
+        margin-top: 10%;
+    }
+
+}
